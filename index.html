@@ -1,62 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birthday Surprise</title>
-    <style>
-        body {
-            background-color: #1a1a1a;
-            color: white;
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Choose Wisely</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      background-image: url('chelli2.jpg'); /* Image linked here */
+      background-size: cover;
+      background-position: center;
+      color: white;
+      position: relative;
+    }
 
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
+    /* Foreground content */
+    .container {
+      position: relative;
+      z-index: 2;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
 
-        p {
-            font-size: 1.5em;
-            text-align: center;
-            margin-bottom: 30px;
-        }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
 
-        .container {
-            text-align: center;
-            animation: fadeIn 2s ease-in-out;
-        }
+    .btn {
+      background-color: #444;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      margin: 10px;
+      font-size: 1.2em;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
+    .btn:hover {
+      background-color: #666;
+    }
+
+    #noBtn {
+      position: absolute;
+      transition: left 0.4s ease, top 0.4s ease;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Audio section -->
-    <audio autoplay loop>
-        <source src="https://raw.githubusercontent.com/Lightzzz011/Birthday_Chellii/main/Birthday.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+  <!-- Foreground content -->
+  <div class="container">
+    <h1>Best Brother In Your Life??</h1>
+    <button class="btn" onclick="window.location.href='thankyou.html'">Me 😊</button>
+    <button class="btn" id="noBtn" onmouseover="runAway()">Other dude 😢</button>
+  </div>
 
-    <!-- Content -->
-    <div class="container">
-        <h1>Happy Birthday, Chelli!</h1>
-        <p>Here’s a little surprise just for you. Have an amazing day!</p>
-    </div>
+  <script>
+    function runAway() {
+      const btn = document.getElementById("noBtn");
+      const padding = 50;
+      const maxX = window.innerWidth - btn.offsetWidth - padding;
+      const maxY = window.innerHeight - btn.offsetHeight - padding;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+
+      btn.style.left = `${x}px`;
+      btn.style.top = `${y}px`;
+    }
+  </script>
 
 </body>
 </html>
