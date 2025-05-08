@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        /* Optional: Add a nice animation to the text */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Audio section -->
+    <audio autoplay loop>
+        <source src="music/BirthdaySong.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Content -->
+    <div class="container">
+        <h1>Happy Birthday, Chelli!</h1>
+        <p>Here’s a little surprise just for you. Have an amazing day!</p>
+    </div>
+
+</body>
+</html>
